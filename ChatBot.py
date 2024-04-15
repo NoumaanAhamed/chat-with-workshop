@@ -27,7 +27,7 @@ def get_vectorstore():
     document_chunks = text_splitter.split_documents(document)
     index_name="mega-workshop"
     # create a vectorstore from the chunks
-    vector_store = PineconeVectorStore.from_documents(document_chunks, CohereEmbeddings(),index_name=index_name)
+    vector_store = PineconeVectorStore.from_documents(document_chunks, CohereEmbeddings(model='embed-english-light-v3.0'),index_name=index_name)
     # vector_store = FAISS.from_documents(document_chunks, OpenAIEmbeddings())
 
     return vector_store

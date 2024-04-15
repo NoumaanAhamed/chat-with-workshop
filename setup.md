@@ -17,3 +17,5 @@ streamlit run app.py
 ```
 
 Dimensions for cohere : 4096 (pinecone)
+
+Deploy in streamlit cloud
