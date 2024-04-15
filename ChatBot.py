@@ -76,7 +76,7 @@ def get_response(user_input):
 
 # app config
 st.set_page_config(page_title="Chat with Workshop", page_icon="📕")
-st.title("Chat with Workshop")
+st.title("Chat with Workshop!")
 st.sidebar.header("Chat with Workshop")
 
 if "chat_history" not in st.session_state:
