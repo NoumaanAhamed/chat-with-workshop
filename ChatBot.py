@@ -81,7 +81,7 @@ st.sidebar.header("Chat with Workshop")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
-        AIMessage(content="Hello, I am a bot. How can I help you?"),
+        AIMessage(content="Hello, I am an AI Chatbot. Ask me doubts related to the workshop"),
     ]
 if "vector_store" not in st.session_state:
     st.session_state.vector_store = get_vectorstore()    
