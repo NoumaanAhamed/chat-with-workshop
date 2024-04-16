@@ -3,7 +3,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Vscode, Git & GitHub",
-    page_icon="",
+    page_icon="🗒️",
 )
 
 st.write("# Vscode, Git & GitHub")
@@ -66,3 +66,6 @@ This is a basic introduction. There's a lot more to explore with these powerful 
 
 """
 )
+
+if __name__ == "__main__":
+    vscode_git_github_page()
