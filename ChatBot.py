@@ -54,7 +54,7 @@ def get_conversational_rag_chain(retriever_chain):
     # llm = ChatOpenAI()
     
     prompt = ChatPromptTemplate.from_messages([
-      ("system", "Answer the user's questions strictly based on the below context in Markdown:\n\n{context}"),
+      ("system", "Answer the user's questions strictly based on the below context in Markdown. Do not exceed 100 words.:\n\n{context}"),
       MessagesPlaceholder(variable_name="chat_history"),
       ("user", "{input}"),
     ])
@@ -76,7 +76,7 @@ def get_response(user_input):
 
 # app config
 st.set_page_config(page_title="Chat with Workshop", page_icon="📕")
-st.title("Chat with Workshop!")
+st.title("Chat with Workshop")
 st.sidebar.header("Chat with Workshop")
 
 if "chat_history" not in st.session_state:

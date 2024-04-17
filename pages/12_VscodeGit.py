@@ -22,7 +22,7 @@ def vscode_git_github_page():
 
     # Adding a heading to the sidebar
     st.sidebar.title("Navigation")
-    st.sidebar.success("Vscode, Git & GitHub")
+    st.sidebar.header("Vscode, Git & GitHub")
 
     st.markdown(
         """
