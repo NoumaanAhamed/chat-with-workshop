@@ -38,11 +38,19 @@ def get_context_retriever_chain(vector_store):
 
     retriever = vector_store.as_retriever()
     
+    # prompt = ChatPromptTemplate.from_messages([
+    #   MessagesPlaceholder(variable_name="chat_history"),
+    #   ("user", "{input}"),
+    #   ("user", "Given the above conversation, generate a search query to look up in order to get information relevant to the conversation")
+    # ])
+
     prompt = ChatPromptTemplate.from_messages([
       MessagesPlaceholder(variable_name="chat_history"),
       ("user", "{input}"),
-      ("user", "Given the above conversation, generate a search query to look up in order to get information relevant to the conversation")
+      ("user", "Given the above conversation, generate a search query to look up in order to get information relevant to the current question. " +
+          "Don't leave out any relevant keywords. Only return the query and no other text.",)
     ])
+
     
     retriever_chain = create_history_aware_retriever(llm, retriever, prompt)
     
@@ -53,11 +61,22 @@ def get_conversational_rag_chain(retriever_chain):
     llm = ChatCohere()
     # llm = ChatOpenAI()
     
+    # prompt = ChatPromptTemplate.from_messages([
+    #   ("system", "Answer the user's questions strictly based on the below context in Markdown. Do not exceed 100 words.:\n\n{context}"),
+    #   MessagesPlaceholder(variable_name="chat_history"),
+    #   ("user", "{input}"),
+    # ])
+
     prompt = ChatPromptTemplate.from_messages([
-      ("system", "Answer the user's questions strictly based on the below context in Markdown. Do not exceed 100 words.:\n\n{context}"),
+      ("system", "You are a personal tutor for students attending a workshop. You impersonate the workshop instructor. " +
+          "Answer the user's questions based on the below context. " +
+          "Whenever it makes sense, provide links to pages that contain more information about the topic from the given context. " +
+          "Format your messages in markdown format.\n\n" +
+          "Context:\n{context}"),
       MessagesPlaceholder(variable_name="chat_history"),
       ("user", "{input}"),
     ])
+
     
     stuff_documents_chain = create_stuff_documents_chain(llm,prompt)
     
