@@ -1,3 +1,7 @@
+## Workshop
+
+This is the content for the Getting started workshop conducted by the department of Information Technology.The workshop is about different resources and tips in Information Technology.It further covers Git/Github and VSCode.
+
 ## Overview
 
 This repository contains a collection of resources and roadmaps for different domains in tech. It is aimed at beginners who are looking to start their journey in tech and want to explore different domains. The resources are curated from various sources and are meant to provide a structured path for learning.
