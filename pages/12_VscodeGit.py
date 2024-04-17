@@ -8,25 +8,11 @@ def vscode_git_github_page():
 
     st.write("# Vscode, Git & GitHub")
 
-    # Center-aligning the sidebar title
-    st.markdown(
-        """
-        <style>
-        .sidebar .sidebar-content {
-            align-items: center;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
     # Adding a heading to the sidebar
-    st.sidebar.title("Navigation")
     st.sidebar.header("Vscode, Git & GitHub")
 
     st.markdown(
         """
-        ## VSCode, Git, and Github
 
     This guide provides a basic overview of using Visual Studio Code (VSCode), Git version control, and GitHub for collaborative coding.
 
