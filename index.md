@@ -5,7 +5,7 @@ This is the content for the Getting started workshop conducted by the department
 Welcome to the Mega IT Workshop! 🚀
 This is a 3 week workshop conducted by the department of IT, via ELITE club.
 
-    The workshop will be conducted by the following members:
+    The workshop will be conducted by the following members who'll be teaching, instructing and coordinating throughout:
     - [Harish PS](https://www.linkedin.com/in/harish-p-s-98a306249/)
     - [Braghadeesh RA](https://www.linkedin.com/in/braghadeesh05/)
     - [Dhruv R Jain](https://www.linkedin.com/in/dhruvrjain/)
