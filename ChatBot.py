@@ -86,33 +86,47 @@ def get_response(user_input):
     retriever_chain = get_context_retriever_chain(st.session_state.vector_store)
     conversation_rag_chain = get_conversational_rag_chain(retriever_chain)
     
-    response = conversation_rag_chain.invoke({
+    # response = conversation_rag_chain.invoke({
+    #     "chat_history": st.session_state.chat_history,
+    #     "input": user_input
+    # })
+    
+    # return response['answer']
+    response_stream = conversation_rag_chain.stream({
         "chat_history": st.session_state.chat_history,
         "input": user_input
     })
-    
-    return response['answer']
+
+    for chunk in response_stream:
+        content = chunk.get("answer", "")
+        yield content
 
 # app config
 st.set_page_config(page_title="Chat with Workshop", page_icon="📕")
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
+
 st.title("Chat with Workshop")
+st.markdown(
+    """
+    Let us know what we can improve about the chatbot here: 
+    [Feedback Form](https://forms.gle/tKQ4QMYBfe4jEgGq7)
+"""
+)
 st.sidebar.header("Chat with Workshop")
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = [
-        AIMessage(content="Hello, I am an AI Chatbot. Ask me doubts related to the workshop in present tense."),
+        AIMessage(content="Hello, I am your AI workshop Instructor. Ask me any doubts related to the workshop."),
     ]
 if "vector_store" not in st.session_state:
     st.session_state.vector_store = get_vectorstore()    
-
-# user input
-user_query = st.chat_input("Type your message here...")
-if user_query is not None and user_query != "":
-    response = get_response(user_query)
-    st.session_state.chat_history.append(HumanMessage(content=user_query))
-    st.session_state.chat_history.append(AIMessage(content=response))
-    
-    
 
 # conversation
 for message in st.session_state.chat_history:
@@ -122,3 +136,26 @@ for message in st.session_state.chat_history:
     elif isinstance(message, HumanMessage):
         with st.chat_message("Human"):
             st.write(message.content)
+
+# user input
+user_query = st.chat_input("Type your message here...")
+if user_query is not None and user_query != "":
+    # response = get_response(user_query)
+    # st.session_state.chat_history.append(HumanMessage(content=user_query))
+    # st.session_state.chat_history.append(AIMessage(content=response))
+    st.session_state.chat_history.append(HumanMessage(content=user_query))
+    with st.chat_message("Human"):
+        st.markdown(user_query)
+    
+    with st.chat_message("AI"):
+        response = st.write_stream(get_response(user_query))
+    st.session_state.chat_history.append(AIMessage(content=response))
+
+# # conversation
+# for message in st.session_state.chat_history:
+#     if isinstance(message, AIMessage):
+#         with st.chat_message("AI"):
+#             st.write(message.content)
+#     elif isinstance(message, HumanMessage):
+#         with st.chat_message("Human"):
+#             st.write(message.content)

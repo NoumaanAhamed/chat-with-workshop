@@ -1,6 +1,19 @@
 ## Workshop
 
-This is the content for the Getting started workshop conducted by the department of Information Technology.The workshop is about different resources and tips in Information Technology.It further covers Git/Github and VSCode.
+This is the content for the Getting started workshop conducted by the department of Information Technology.The workshop is about different resources and tips in Information Technology.
+
+Welcome to the Mega IT Workshop! 🚀
+This is a 3 week workshop conducted by the department of IT, via ELITE club.
+
+    The workshop will be conducted by the following members:
+    - [Harish PS](https://www.linkedin.com/in/harish-p-s-98a306249/)
+    - [Braghadeesh RA](https://www.linkedin.com/in/braghadeesh05/)
+    - [Dhruv R Jain](https://www.linkedin.com/in/dhruvrjain/)
+    - [Mohammed Noumaan](https://www.linkedin.com/in/noumaanahamed/)
+
+    Peer to Peer Learning Hub : [Join here](https://devsrec.club/#/peer-to-peer)
+
+    For any doubts related to the workshop, Please ask the ChatBot.
 
 ## Overview
 

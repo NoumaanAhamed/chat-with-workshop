@@ -13,7 +13,7 @@ def show_app_development_page():
     st.sidebar.header("App Development")
 
     st.markdown(
-        """
+        """                     
 ### Resources
 
 - [Flutter + Jetpack Compose](https://salt-manchego-99d.notion.site/Flutter-Jetpack-Compose-An-App-Development-Course-98dfc4caa0814175bb82da273a39b171)

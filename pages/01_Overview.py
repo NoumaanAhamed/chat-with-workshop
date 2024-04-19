@@ -26,5 +26,7 @@ st.markdown(
     - [Mohammed Noumaan](https://www.linkedin.com/in/noumaanahamed/)
 
     Peer to Peer Learning Hub : [Join here](https://devsrec.club/#/peer-to-peer)
+
+    For any doubts related to the workshop, Please ask the ChatBot.
 """
 )
