@@ -8,7 +8,7 @@ st.set_page_config(
 
 st.write("# Welcome to Mega IT Workshop! 👋")
 
-st.sidebar.success("Select a domain above.")
+ st.sidebar.header("Workshop Overview")
 
 st.markdown(
     """
