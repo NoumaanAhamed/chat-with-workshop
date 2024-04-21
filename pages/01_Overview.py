@@ -8,7 +8,7 @@ st.set_page_config(
 
 st.write("# Welcome to Mega IT Workshop! 👋")
 
- st.sidebar.header("Workshop Overview")
+st.sidebar.header("Workshop Overview")
 
 st.markdown(
     """
