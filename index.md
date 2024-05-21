@@ -1,19 +1,8 @@
-## Workshop
+## AI Teaching Assistant
 
-This is the content for the Getting started workshop conducted by the department of Information Technology.The workshop is about different resources and tips in Information Technology.
+This chatbot is created by Mohammed Noumaan,Lalith Aditya, Lavan Kishore and Jayanth R from Department of Information Technology.
 
-Welcome to the Mega IT Workshop! 🚀
-This is a 3 week workshop conducted by the department of IT, via ELITE club.
-
-    The workshop will be conducted by the following members who'll be teaching, instructing and coordinating throughout:
-    - [Harish PS](https://www.linkedin.com/in/harish-p-s-98a306249/)
-    - [Braghadeesh RA](https://www.linkedin.com/in/braghadeesh05/)
-    - [Dhruv R Jain](https://www.linkedin.com/in/dhruvrjain/)
-    - [Mohammed Noumaan](https://www.linkedin.com/in/noumaanahamed/)
-
-    Peer to Peer Learning Hub : [Join here](https://devsrec.club/#/peer-to-peer)
-
-    For any doubts related to the workshop, Please ask the ChatBot.
+For any doubts related to the workshop, Please ask the ChatBot.
 
 ## Overview
 
