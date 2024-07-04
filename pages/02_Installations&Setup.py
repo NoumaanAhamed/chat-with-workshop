@@ -52,6 +52,14 @@ def show_setup_page():
     git push origin main
     ```
 
+    ## Setup First Time
+
+    ```sh
+    git init
+    git config --list
+    git config --global user.name "Your Name"
+    git config --global user.email "Your Email"
+    git remote add origin https://<PAT>@github.com/<username>/<repo>
     """
     )
 
