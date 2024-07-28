@@ -7,6 +7,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter,MarkdownTextS
 # from langchain_community.vectorstores.faiss import FAISS
 from langchain_pinecone import PineconeVectorStore
 from langchain_cohere import ChatCohere,CohereEmbeddings
+from langchain_groq import ChatGroq
 # from langchain_openai import ChatOpenAI,OpenAIEmbeddings
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -33,8 +34,9 @@ def get_vectorstore():
     return vector_store
 
 def get_context_retriever_chain(vector_store):
-    llm = ChatCohere()
+    # llm = ChatCohere()
     # llm = ChatOpenAI()
+    llm = ChatGroq(model="llama3-8b-8192")
 
     retriever = vector_store.as_retriever()
     
@@ -58,8 +60,10 @@ def get_context_retriever_chain(vector_store):
     
 def get_conversational_rag_chain(retriever_chain): 
     
-    llm = ChatCohere()
+    # llm = ChatCohere()
     # llm = ChatOpenAI()
+    llm = ChatGroq(model="llama3-8b-8192")
+
     
     # prompt = ChatPromptTemplate.from_messages([
     #   ("system", "Answer the user's questions strictly based on the below context in Markdown. Do not exceed 100 words.:\n\n{context}"),
